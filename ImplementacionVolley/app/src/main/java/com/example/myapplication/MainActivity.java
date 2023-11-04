@@ -1,4 +1,4 @@
-package com.example.gfgvolleyapicall;
+package com.example.myapplication;
 
 import static android.content.ContentValues.TAG;
 
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         mStringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-
+                System.out.println(response);
                 Toast.makeText(getApplicationContext(), "Response :" + response.toString(), Toast.LENGTH_LONG).show();//display the response on screen
             }
         }, new Response.ErrorListener() {

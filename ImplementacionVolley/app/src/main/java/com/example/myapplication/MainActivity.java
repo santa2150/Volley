@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 //importaciones volley
+
+
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -37,13 +39,18 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(String response) {
                 System.out.println(response);
                 Toast.makeText(getApplicationContext(), "Response :" + response.toString(), Toast.LENGTH_LONG).show();//display the response on screen
+                TextView responseTextView = findViewById(R.id.responseTextView);
+                responseTextView.setText("Response: " + response);
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.i(TAG, "Error :" + error.toString());
             }
-        });
+        })
+
+
+        ;
 
         mRequestQueue.add(mStringRequest);
     }
